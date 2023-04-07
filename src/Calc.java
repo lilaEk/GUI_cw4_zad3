@@ -14,14 +14,14 @@ public class Calc {
 
     public static String doCalc(String arth) {
         try {
-            int numberA;
-            int numberB;
+            Number numberA;
+            Number numberB;
             char artChar;
 
-            arth = arth.trim();
+            arth = arth.trim(); // usuwa spacje na poczatku i koncu
             String[] elements = arth.split(" ");
-            numberA = Integer.parseInt(elements[0]);
-            numberB = Integer.parseInt(elements[elements.length - 1]);
+            numberA = Double.valueOf(elements[0]);
+            numberB = Double.valueOf(elements[elements.length - 1]);
             artChar = elements[1].charAt(0);
             return String.valueOf(commands.get(artChar).apply(numberA, numberB));
         } catch (NumberFormatException e) {
